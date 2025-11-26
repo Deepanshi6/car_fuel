@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Car Management</h2>
+
+<h3>Add Car</h3>
+<div class="card">
+    <input type="text" id="car_id" placeholder="Car ID"><br>
+    <input type="text" id="company" placeholder="Company"><br>
+    <input type="text" id="model" placeholder="Model"><br>
+
+    <select id="fuel_type">
+        <option value="">Select Fuel Type</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="CNG">CNG</option>
+        <option value="Electric">Electric</option>
+    </select><br>
+
+    <button onclick="addCar()">Add Car</button>
+</div>
+
+<h3>Edit Car</h3>
+<div class="card">
+    <input type="text" id="edit_car_id" placeholder="Car ID"><br>
+    <input type="text" id="edit_company" placeholder="New Company"><br>
+    <input type="text" id="edit_model" placeholder="New Model"><br>
+
+    <select id="edit_fuel_type">
+        <option value="">Select New Fuel Type</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="CNG">CNG</option>
+        <option value="Electric">Electric</option>
+    </select><br>
+
+    <button onclick="editCar()">Update Car</button>
+</div>
+
+<h3>Delete Car</h3>
+<div class="card">
+    <input type="text" id="delete_car_id" placeholder="Car ID">
+    <button onclick="deleteCar()">Delete</button>
+</div>
+
+<h3>All Cars</h3>
+<div id="car_list"></div>
+
+<a href="/" class="back">⬅ Back</a>
+
+<script src="/static/scripts.js"></script>
+<script>loadCars()</script>
+
+</body>
+</html>

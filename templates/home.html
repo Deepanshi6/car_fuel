@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FuelCo Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #dfefff, #f8f9ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating slow animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .title {
+            font-size: 55px;
+            font-weight: bold;
+            color: #2a4d9b;
+            margin-bottom: 10px;
+            animation: float 3s infinite ease-in-out;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .menu-btn {
+            width: 200px;
+            height: 150px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            text-decoration: none;
+            color: #222;
+            transition: 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .menu-btn:hover {
+            transform: translateY(-8px);
+            background: #4c6ef5;
+            color: white;
+            border-color: #3451d0;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">FuelCo</div>
+    <div class="subtitle">Smart Fuel & Vehicle Management</div>
+
+    <div class="menu">
+
+        <a href="/driver" class="menu-btn">
+            <div class="icon">👤</div>
+            Driver
+        </a>
+
+        <a href="/car" class="menu-btn">
+            <div class="icon">🚗</div>
+            Car
+        </a>
+
+        <a href="/fuel" class="menu-btn">
+            <div class="icon">⛽</div>
+            Fuel Log
+        </a>
+
+        <a href="/view_logs" class="menu-btn">
+            <div class="icon">📄</div>
+            View Logs
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

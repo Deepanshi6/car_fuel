@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Driver Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Driver Management</h2>
+
+<h3>Add Driver</h3>
+<div class="card">
+    <input type="text" id="name" placeholder="Name"><br>
+
+    <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male ♂</option>
+        <option value="Female">Female ♀</option>
+        <option value="Other">Other ⚧</option>
+    </select><br>
+
+    <input type="date" id="dob"><br>
+    <input type="date" id="doj"><br>
+    <input type="text" id="license_number" placeholder="License Number"><br>
+    <input type="text" id="car_id" placeholder="Car ID (optional)"><br>
+
+    <button onclick="addDriver()">Add Driver</button>
+</div>
+
+<h3>Edit Driver</h3>
+<div class="card">
+    <input type="number" id="edit_driver_id" placeholder="Driver ID"><br>
+    <input type="text" id="edit_name" placeholder="New Name"><br>
+    <input type="text" id="edit_license" placeholder="New License"><br>
+    <input type="text" id="edit_car" placeholder="New Car"><br>
+    <button onclick="editDriver()">Update Driver</button>
+</div>
+
+<h3>Delete Driver</h3>
+<div class="card">
+    <input type="number" id="delete_driver_id" placeholder="Driver ID">
+    <button onclick="deleteDriver()">Delete</button>
+</div>
+
+<h3>All Drivers</h3>
+<div id="driver_list"></div>
+
+<a href="/" class="back">⬅ Back</a>
+
+<script src="/static/scripts.js"></script>
+<script>loadDrivers()</script>
+
+</body>
+</html>

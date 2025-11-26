@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Log</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Fuel Log</h2>
+
+<h3>Add Fuel Log</h3>
+<div class="card">
+    <input type="number" id="driver_id" placeholder="Driver ID"><br>
+    <input type="text" id="car_id" placeholder="Car ID"><br>
+
+    <select id="fuel_type">
+        <option value="">Select Fuel Type</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="CNG">CNG</option>
+        <option value="Electric">Electric</option>
+    </select><br>
+
+    <input type="number" id="fuel_get" placeholder="Fuel Received"><br>
+    <input type="number" id="total_fuel" placeholder="Total Fuel"><br>
+    <input type="number" id="spent" placeholder="Amount Spent"><br>
+    <input type="text" id="pump" placeholder="Pump Name"><br>
+    <input type="text" id="place" placeholder="Place"><br>
+
+    <button onclick="addFuelLog()">Add Fuel Log</button>
+</div>
+
+<h3>Edit Fuel Log</h3>
+<div class="card">
+    <input type="number" id="edit_log_id" placeholder="Log ID"><br>
+    <input type="number" id="edit_fuel_get" placeholder="New Fuel"><br>
+    <input type="number" id="edit_total_fuel" placeholder="New Total Fuel"><br>
+    <input type="number" id="edit_spent" placeholder="New Amount"><br>
+    <input type="text" id="edit_pump" placeholder="New Pump Name"><br>
+    <input type="text" id="edit_place" placeholder="New Place"><br>
+    <button onclick="editFuelLog()">Update Fuel Log</button>
+</div>
+
+<h3>Delete Fuel Log</h3>
+<div class="card">
+    <input type="number" id="delete_log_id" placeholder="Log ID">
+    <button onclick="deleteFuelLog()">Delete</button>
+</div>
+
+<h3>All Fuel Logs</h3>
+<div id="fuel_log_list"></div>
+
+<a href="/" class="back">⬅ Back</a>
+
+<script src="/static/scripts.js"></script>
+<script>loadFuelLogs()</script>
+
+</body>
+</html>
