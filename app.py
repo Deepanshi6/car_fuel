@@ -1,3 +1,4 @@
+from datetime import date
 from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -17,21 +18,21 @@ templates = Jinja2Templates(directory="templates")
 
 
 # database dependency
-def get_db() -> Generator[DBSession, None, None]:
+def get_db():
    
-    db = Session()  # create a new session
+    db = Session()  # create a  session
     try:
         yield db
     finally:
         db.close()
 
 
-# schemas
+# schemas for request bodies and responses using Pydantic
 class DriverSchema(BaseModel):
     name: str
     gender: str
-    dob: str
-    doj: str
+    dob: date 
+    doj: date
     license_number: str
     car_id: Optional[str] = None
 
@@ -77,27 +78,27 @@ class EditFuelLogSchema(BaseModel):
     place: Optional[str] = None
 
 
-# template routes
+# HTML route handlers for connecting  frontend home pages
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
-
+# driver page
 @app.get("/driver")
 def driver_page(request: Request):
     return templates.TemplateResponse("driver.html", {"request": request})
 
-
+# car page
 @app.get("/car")
 def car_page(request: Request):
     return templates.TemplateResponse("car.html", {"request": request})
 
-
+# fuel log page
 @app.get("/fuel")
 def fuel_page(request: Request):
     return templates.TemplateResponse("fuel_log.html", {"request": request})
 
-
+# view logs page
 @app.get("/view_logs")
 def view_logs_page(request: Request):
     return templates.TemplateResponse("view_logs.html", {"request": request})
